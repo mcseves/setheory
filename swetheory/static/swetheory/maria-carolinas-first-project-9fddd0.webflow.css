@@ -1,6 +1,9 @@
-.heading {
-  color: #00b8ff;
-  text-align: center;
+body {
+  font-family: Bitter, serif;
+  color: #333;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
 }
 
 .utility-page-wrap {
@@ -62,60 +65,8 @@
   grid-template-columns: 1fr 1fr;
   -ms-grid-rows: auto auto;
   grid-template-rows: auto auto;
+  background-color: #eeeee9;
   font-weight: 700;
-}
-
-.paragraph {
-  margin-top: 90px;
-  margin-right: 100px;
-  margin-left: 66px;
-  padding: 10px;
-  font-family: Verdana, Geneva, sans-serif;
-  font-size: 20px;
-}
-
-.form-block {
-  margin-right: 100px;
-  margin-left: 100px;
-}
-
-.submit-button {
-  position: static;
-  display: inline-block;
-  float: right;
-  clear: right;
-}
-
-.text-field {
-  display: inline-block;
-  width: 70%;
-  padding-right: 5px;
-  padding-left: 5px;
-}
-
-.text-field-2 {
-  display: inline-block;
-  width: 70%;
-  margin-right: 5px;
-  margin-left: 50px;
-  padding-right: 10px;
-  padding-left: 10px;
-  float: left;
-}
-
-.submit-button-2 {
-  position: static;
-  display: block;
-  overflow: visible;
-  margin-right: auto;
-  margin-left: auto;
-  padding: 0px;
-  float: left;
-  clear: none;
-  -webkit-box-flex: 0;
-  -webkit-flex: 0 auto;
-  -ms-flex: 0 auto;
-  flex: 0 auto;
 }
 
 .form {
@@ -127,11 +78,11 @@
   margin-left: 20px;
   float: none;
   clear: none;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
   -webkit-justify-content: center;
   -ms-flex-pack: center;
@@ -139,10 +90,10 @@
   -webkit-flex-wrap: nowrap;
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
-  -webkit-box-align: baseline;
-  -webkit-align-items: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   -webkit-align-content: flex-start;
   -ms-flex-line-pack: start;
   align-content: flex-start;
@@ -167,7 +118,8 @@
   -webkit-flex: 0 auto;
   -ms-flex: 0 auto;
   flex: 0 auto;
-  font-family: Verdana, Geneva, sans-serif;
+  font-family: Bitter, serif;
+  font-weight: 400;
 }
 
 .formblock {
@@ -176,31 +128,16 @@
   text-align: center;
 }
 
-.div-block {
-  width: 50%;
-  clear: left;
-}
-
-.div-block-2 {
-  clear: right;
-}
-
-.submitbutton-3 {
+.submitbutton {
   width: 15%;
   clear: left;
   -webkit-box-flex: 0;
   -webkit-flex: 0 auto;
   -ms-flex: 0 auto;
   flex: 0 auto;
-  background-color: #000;
-  font-family: Verdana, Geneva, sans-serif;
-}
-
-.body-2 {
-  display: block;
-  margin-top: 60px;
-  margin-right: 60px;
-  margin-left: 60px;
+  background-color: #446e83;
+  font-family: Bitter, serif;
+  font-weight: 400;
 }
 
 .submit-button-3 {
@@ -213,45 +150,46 @@
 }
 
 .nav-link {
-  font-family: Verdana, Geneva, sans-serif;
+  font-family: Bitter, serif;
   color: #fff;
+  font-weight: 400;
 }
 
 .navbar {
   background-color: #2b2b2b;
 }
 
+.heading-3 {
+  margin-left: 66px;
+  font-family: Bitter, serif;
+}
+
+.heading-4 {
+  margin-right: 66px;
+  margin-left: 66px;
+  font-family: Bitter, serif;
+}
+
+.navbar-2 {
+  background-color: #2b2b2b;
+}
+
+.nav-link-2 {
+  font-family: Bitter, serif;
+  color: #fff;
+}
+
+.body-2 {
+  background-color: #eeeee9;
+}
+
 @media (max-width: 991px) {
-  .submit-button-2 {
-    display: inline-block;
-    padding-right: 5px;
-    padding-left: 5px;
-    float: left;
-    clear: right;
-  }
   .select-field {
     clear: left;
-  }
-  .div-block {
-    width: 50%;
-  }
-  .div-block-2 {
-    width: 50%;
   }
 }
 
 @media (max-width: 479px) {
-  .submit-button-2 {
-    position: relative;
-    right: 0px;
-    display: block;
-    overflow: visible;
-    clear: none;
-    -webkit-box-flex: 0;
-    -webkit-flex: 0 auto;
-    -ms-flex: 0 auto;
-    flex: 0 auto;
-  }
   .form {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -280,7 +218,7 @@
     display: inline-block;
     clear: none;
   }
-  .submitbutton-3 {
+  .submitbutton {
     position: relative;
     overflow: visible;
     width: 50%;

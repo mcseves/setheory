@@ -30,16 +30,23 @@
     </div>
   </div>
   <div></div>
-  <p class="paragraph">Bem vindo...</p>
-  <div class="formblock w-form">
-    <form id="wf-form-InterestSearch" name="wf-form-InterestSearch" data-name="InterestSearch" class="form w-clearfix">
-        <select id="Area-of-Interest" name="Area-of-Interest" data-name="Area of Interest" required="" class="select-field w-select">
-            <!--TODO: atualizar opcoes com infos do bd-->
-            <option value="">Select one...</option>
-            <option value="First">First Choice</option>
-            <option value="Second">Second Choice</option>
-            <option value="Third">Third Choice</option></select>
-        <input type="submit" value="Submit" data-wait="Please wait..." class="submitbutton-3 w-button"></form>
+   <div class="w-container">
+    <h1>Area of Interest {}</h1>
+    <p>Filter the propositions for best visualisation of the data.</p>
+    <div class="w-form">
+      <form id="email-form" name="email-form" data-name="Email Form" class="w-clearfix"><label for="Proposition">Proposition</label><select id="Proposition" name="Proposition" data-name="Proposition" required="" class="w-select"><option value="">Select one...</option><option value="First">First Choice</option><option value="Second">Second Choice</option><option value="Third">Third Choice</option></select><label for="cause-construct">Cause Construct</label><select id="cause-construct" name="cause-construct" data-name="cause construct" required="" class="w-select"><option value="">Select one...</option><option value="First">First Choice</option><option value="Second">Second Choice</option><option value="Third">Third Choice</option></select><label for="Effect-Construct">Effect Construct</label><select id="Effect-Construct" name="Effect-Construct" data-name="Effect Construct" required="" class="w-select"><option value="">Select one...</option><option value="First">First Choice</option><option value="Second">Second Choice</option><option value="Third">Third Choice</option></select><input type="submit" value="Submit" data-wait="Please wait..." class="submit-button-3 submitbutton w-button"></form>
+      <div class="w-form-done">
+        <div>Thank you! Your submission has been received!</div>
+      </div>
+      <div class="w-form-fail">
+        <div>Oops! Something went wrong while submitting the form.</div>
+      </div>
+    </div>
+    <div id="d3jsblock"></div>
+  </div>
+  <div data-delay="0" class="w-dropdown">
+    <div class="w-dropdown-toggle"></div>
+    <nav class="w-dropdown-list"><a href="#" class="w-dropdown-link">Link 1</a><a href="#" class="w-dropdown-link">Link 2</a><a href="#" class="w-dropdown-link">Link 3</a></nav>
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" type="text/javascript" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="js/webflow.js" type="text/javascript"></script>
