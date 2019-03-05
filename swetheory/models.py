@@ -1,6 +1,5 @@
 # Defining our proposition model
 
-from django.conf import settings
 from django.db import models
 from django.urls import reverse
 
@@ -25,6 +24,9 @@ class Construct(models.Model):
     construct_name = models.TextField()
     construct_area = models.ForeignKey(AreaOfInterest, on_delete=models.CASCADE)
     construct_values = models.ManyToManyField(Value)
+
+    # class Meta:
+    #     abstract = True
 
     def __str__(self):
         return self.construct_name
@@ -58,7 +60,6 @@ class EvidenceEffect(models.Model):
     evidence_scope = models.TextField()
     evidence_proposition = models.ForeignKey(Proposition, on_delete=models.CASCADE)
 
-    # TODO checar nome dos tipos possiveis de evidencia
     TYPES_EVIDENCE = (
         ('p', 'Philosophical'),
         ('e', 'Empyrical')
