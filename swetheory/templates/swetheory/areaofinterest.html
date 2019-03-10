@@ -1,5 +1,4 @@
 {% load static %}
-{% load custom_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,26 +37,6 @@
   </div>
 </nav>
 
-<header class="page-header header container-fluid">
-    <div class="description">
-      <h1>Uncovering theories in Software Engineering</h1>
-      <p>This page will help you find all software engineering theories related to a certain area of interest.</p>
-      <p>Search here</p>
-        <!--<form type="get" action="." style="margin: 0">-->
-        <!--<input  id="search_box" type="text" name="search_box"  placeholder="Search..." >-->
-            <!--<button id="search_submit" type="submit" >Submit</button>-->
-        <div class="dropdown show">
-          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Domain of interest
-          </a>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                {% for area in areas %}
-                    <a class="dropdown-item" href={{area.area_name|remove_spaces}}>{{area.area_name}}</a>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-</header>
 
 <body>
   <div class="">
