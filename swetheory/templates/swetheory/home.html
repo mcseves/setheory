@@ -1,5 +1,6 @@
-{% load static %}
 {% load custom_tags %}
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,9 +10,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+
 <!-- bootstrap -->
   <!--<link rel="stylesheet" href="css/bootstrap.min.css">-->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="static/swetheory/css/main.css">
 
 </head>
@@ -26,10 +28,10 @@
   <div class="collapse navbar-collapse" id="main-navigation">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" href="#">Inicio</a>
+        <a class="nav-link" href="home.html">Inicio</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="areaofinterest.html">Area de Interesse</a>
+        <a class="nav-link" href="areas.html">Area de Interesse</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Sobre</a>
@@ -52,7 +54,7 @@
           </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 {% for area in areas %}
-                    <a class="dropdown-item" href={{area.area_name|remove_spaces}}>{{area.area_name}}</a>
+                    <a class="dropdown-item" href="areas/{{area.name|remove_spaces}}">{{area.name}}</a>
                 {% endfor %}
             </div>
         </div>

@@ -4,10 +4,10 @@ from django.db import models
 from django.urls import reverse
 
 class AreaOfInterest(models.Model):
-    area_name = models.TextField(max_length=40, help_text='Enter area of study')
+    name = models.TextField(max_length=50, help_text='Enter area of study')
 
     def __str__(self):
-        return self.area_name
+        return self.name
 
     @property
     def get_absolute_url(self):
@@ -15,50 +15,51 @@ class AreaOfInterest(models.Model):
 
 
 class Value(models.Model):
-    value_name = models.TextField()
+    name = models.TextField()
 
     def __str__(self):
-        return self.value_name
+        return self.name
+
 
 class Construct(models.Model):
-    construct_name = models.TextField()
-    construct_area = models.ForeignKey(AreaOfInterest, on_delete=models.CASCADE)
-    construct_values = models.ManyToManyField(Value)
+    name = models.TextField()
+    area = models.ForeignKey(AreaOfInterest, on_delete=models.CASCADE)
+    values = models.ManyToManyField(Value)
 
     # class Meta:
     #     abstract = True
 
     def __str__(self):
-        return self.construct_name
+        return self.name
 
 
 class Cause(models.Model):
-    cause_name = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="causeconstruct",default='')
-    reference_cause_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="referencevalue",default='')
-    observed_cause_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="observedvalue",default='')
+    name = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="cause_construct", default='')
+    reference_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="reference_value", default='')
+    observed_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="observed_value", default='')
 
     def __str__(self):
-        return self.cause_name.construct_name
+        return self.name
 
 
 class Effect(models.Model):
-    effect_name = models.ForeignKey(Construct, on_delete=models.CASCADE)
-    observed_effect_value = models.ForeignKey(Value, on_delete=models.CASCADE)
+    name = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="effect_construct")
+    observed_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="observed_effect_value")
 
     def __str__(self):
-        return self.effect_name.construct_name
+        return self.name
 
 
 class Proposition(models.Model):
-    proposition_area = models.ForeignKey(AreaOfInterest, on_delete=models.CASCADE)
-    proposition_cause = models.ManyToManyField(Cause)
-    proposition_effect = models.ManyToManyField(Effect)
+    area = models.ForeignKey(AreaOfInterest, on_delete=models.CASCADE, related_name="proposition")
+    cause = models.ManyToManyField(Cause)
+    effect = models.ManyToManyField(Effect)
 
 
 class EvidenceEffect(models.Model):
-    evidence_name = models.TextField()
-    evidence_scope = models.TextField()
-    evidence_proposition = models.ForeignKey(Proposition, on_delete=models.CASCADE)
+    name = models.TextField()
+    scope = models.TextField()
+    proposition = models.ForeignKey(Proposition, on_delete=models.CASCADE)
 
     TYPES_EVIDENCE = (
         ('p', 'Philosophical'),
@@ -76,4 +77,4 @@ class EvidenceEffect(models.Model):
     doi_number = models.IntegerField()
 
     def __str__(self):
-        return self.evidence_name
+        return self.name

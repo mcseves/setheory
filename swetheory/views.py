@@ -1,6 +1,8 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from .models import AreaOfInterest
 # Create your views here.
+
 
 def home(request):
     if request.method == 'GET':  # If the form is submitted
@@ -12,11 +14,7 @@ def home(request):
 
     return render(request, 'swetheory/home.html', args)
 
-def displayareasofinterest(request):
-    return render(request, 'swetheory/areaofinterest.html', {})
 
-def displaytheories(request):
-    return render(request, 'swetheory/displaytheories.html', {})
+def area(request):
+    return render(request, 'swetheory/areas.html', {})
 
-def createtheories(request):
-    return render(request, 'swetheory/createtheories.html', {})

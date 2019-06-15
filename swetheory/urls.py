@@ -1,8 +1,10 @@
-from django.urls import path
+from django.contrib import admin
+from django.urls import path, re_path, include
 from . import views
 
 urlpatterns = [
+    # redireciona pagina inicial
     path('', views.home, name='home'),
-    path('display/', views.displaytheories, name='displaytheories'),
-    path('display/create', views.createtheories, name='createtheories')
+    path('home.html', views.home, name='home'),
+    path('areas$', views.area)
 ]
