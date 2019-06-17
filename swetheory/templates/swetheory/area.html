@@ -1,16 +1,21 @@
 {% extends 'swetheory/base.html' %}
 
 {% block title %}
-  {{ which_area.name }} - {{ block.super }}
+  {{ current_area.name }} - {{ block.super }}
 {% endblock %}
 
 {% block breadcrumb %}
-  <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-  <li class="breadcrumb-item active">{{ which_area.name }}</li>
+    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+    <li class="breadcrumb-item active">{{ current_area.name }}</li>
 {% endblock %}
 
 {% block content %}
-    <!-- just leaving it empty for now. we will add core here soon. -->
+      {% for cnstr in all_construct %}
+            {% if cnstr.area.name == current_area.name %}
+            {{ cnstr.name }}<br>
+            {% endif %}
+      {% endfor %}
+
 {% endblock %}
 
 {% load static %}

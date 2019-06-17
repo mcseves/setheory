@@ -1,7 +1,5 @@
-from django.shortcuts import render
-from .models import AreaOfInterest
-from django.shortcuts import render, get_object_or_404
-# Create your views here.
+from django.shortcuts import render, redirect, get_object_or_404
+from .models import *
 
 
 def home(request):
@@ -17,6 +15,37 @@ def home(request):
 
 def area_of_interest(request, name):
     # return render(request, 'swetheory/areas.html', {})
-    which_area = get_object_or_404(AreaOfInterest, name=name)
+    current_area = get_object_or_404(AreaOfInterest, name=name)
+    all_construct = Construct.objects.all()
 
-    return render(request, 'swetheory/area.html', {'which_area': which_area})
+    return render(request, 'swetheory/area.html', {'current_area': current_area, 'all_construct': all_construct})
+
+
+def new_theory(request, name):
+    current_area = get_object_or_404(AreaOfInterest, name=name)
+
+
+    if request.method == 'POST':
+        # causeconstruct = request.POST['causeconstruct']
+        # refvalue = request.POST['refvalue']
+        # obsvalue = request.POST['obsvalue']
+
+        # user = User.objects.first()
+
+        # cause = Cause.objects.create(
+        #     name=causeconstruct,
+        #     reference_value=refvalue,
+        #     observed_value=obsvalue
+        # )
+
+        constructname = request.POST['construct']
+
+        construct = Construct.objects.create(
+            name=constructname,
+            area=current_area
+        )
+
+
+        return redirect('area_of_interest', name=name)
+
+    return render(request, 'swetheory/createtheories.html', {'current_area': current_area})

@@ -1,1 +1,24 @@
-loading...
+{% extends 'swetheory/base.html' %}
+
+{% block title %}
+  Register a new theory
+{% endblock %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'area_of_interest' current_area.name %}">{{ current_area.name }}</a></li>
+    <li class="breadcrumb-item active">New theory</li>
+{% endblock %}
+
+{% block content %}
+  <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+          <label for="id_construct">Construct</label>
+          <input type="text" class="form-control" id="id_construct" name="construct">
+      </div>
+      <button type="submit" class="btn btn-success">Post</button>
+  </form>
+{% endblock %}
+
+{% load static %}
