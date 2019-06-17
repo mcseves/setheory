@@ -8,6 +8,5 @@ urlpatterns = [
     # path('', views.home, name='home'),
     path('home.html', views.home, name='home'),
     url(r'^$', views.home, name='home'),
-    path('area/<int:pk>', views.area, name='area'),
-
+    path('area/<int:pk>', views.area_of_interest, name='area_of_interest')
 ]

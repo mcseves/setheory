@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 from .models import AreaOfInterest
+from django.shortcuts import render, get_object_or_404
 # Create your views here.
 
 
@@ -15,8 +15,8 @@ def home(request):
     return render(request, 'swetheory/home.html', args)
 
 
-def area(request, pk):
+def area_of_interest(request, pk):
     # return render(request, 'swetheory/areas.html', {})
-    area = AreaOfInterest.objects.get(pk=pk)
+    which_area = get_object_or_404(AreaOfInterest, pk=pk)
 
-    return render(request, 'area.html', {'area': area})
+    return render(request, 'swetheory/area.html', {'which_area': which_area})
