@@ -15,6 +15,8 @@ def home(request):
     return render(request, 'swetheory/home.html', args)
 
 
-def area(request):
-    return render(request, 'swetheory/areas.html', {})
+def area(request, pk):
+    # return render(request, 'swetheory/areas.html', {})
+    area = AreaOfInterest.objects.get(pk=pk)
 
+    return render(request, 'area.html', {'area': area})

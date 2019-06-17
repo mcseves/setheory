@@ -54,7 +54,8 @@
           </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                 {% for area in areas %}
-                    <a class="dropdown-item" href="areas/{{area.name|remove_spaces}}">{{area.name}}</a>
+                    <!--<a class="dropdown-item" href="areas/{{area.name|remove_spaces}}">{{area.name}}</a>-->
+                <a class="dropdown-item" href="/area">{{area.name}}</a>
                 {% endfor %}
             </div>
         </div>

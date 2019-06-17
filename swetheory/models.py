@@ -3,8 +3,9 @@
 from django.db import models
 from django.urls import reverse
 
+
 class AreaOfInterest(models.Model):
-    name = models.TextField(max_length=50, help_text='Enter area of study')
+    name = models.CharField(max_length=60, help_text='Enter area of study')
 
     def __str__(self):
         return self.name
@@ -15,7 +16,7 @@ class AreaOfInterest(models.Model):
 
 
 class Value(models.Model):
-    name = models.TextField()
+    name = models.CharField(max_length=60, help_text='Enter value')
 
     def __str__(self):
         return self.name
@@ -24,10 +25,7 @@ class Value(models.Model):
 class Construct(models.Model):
     name = models.TextField()
     area = models.ForeignKey(AreaOfInterest, on_delete=models.CASCADE)
-    values = models.ManyToManyField(Value)
-
-    # class Meta:
-    #     abstract = True
+    # values = models.ManyToManyField(Value)
 
     def __str__(self):
         return self.name
@@ -39,7 +37,7 @@ class Cause(models.Model):
     observed_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="observed_value", default='')
 
     def __str__(self):
-        return self.name
+        return self.name.name
 
 
 class Effect(models.Model):
@@ -47,7 +45,7 @@ class Effect(models.Model):
     observed_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="observed_effect_value")
 
     def __str__(self):
-        return self.name
+        return self.name.name
 
 
 class Proposition(models.Model):
