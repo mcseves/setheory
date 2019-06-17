@@ -12,8 +12,9 @@ body {
 
 .nav-link,
 .navbar-brand {
-  color: #fff;
-  cursor: pointer;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Work Sans', sans-serif;
 }
 
 .nav-link {
