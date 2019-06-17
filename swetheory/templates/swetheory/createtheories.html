@@ -13,10 +13,28 @@
 {% block content %}
   <form method="post">
       {% csrf_token %}
-      <div class="form-group">
-          <label for="id_construct">Construct</label>
-          <input type="text" class="form-control" id="id_construct" name="construct">
-      </div>
+      {% if form.non_field_errors %}
+        <div class="form-group text-error">
+            {{ form.non_field_errors }}
+        </div>
+        {% endif %}
+
+      {% for hidden in form.hidden_fields %}
+        {{ hidden }}
+      {% endfor %}
+
+      {% for field in form.visible_fields %}
+        {{ field.help_text}}
+        {{ field }}
+        {% if field.errors %}
+            <span>{{ field.errors|striptags }}</span>
+        {% endif %}
+      {% endfor %}
+
+      <!--<div class="form-group">-->
+          <!--<label for="id_construct">Construct</label>-->
+          <!--<input type="text" class="form-control" id="id_construct" name="name">-->
+      <!--</div>-->
       <button type="submit" class="btn btn-success">Post</button>
   </form>
 {% endblock %}

@@ -23,8 +23,8 @@ class Value(models.Model):
 
 
 class Construct(models.Model):
-    name = models.TextField()
-    area = models.ForeignKey(AreaOfInterest, on_delete=models.CASCADE)
+    name = models.CharField(max_length=200, help_text='Enter construct name')
+    area = models.ForeignKey(AreaOfInterest, on_delete=models.CASCADE, related_name="construct")
     # values = models.ManyToManyField(Value)
 
     def __str__(self):
@@ -32,17 +32,17 @@ class Construct(models.Model):
 
 
 class Cause(models.Model):
-    name = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="cause_construct", default='')
-    reference_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="reference_value", default='')
-    observed_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="observed_value", default='')
+    name = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="cause", default='')
+    reference_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="cause_ref", default='')
+    observed_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="cause_obs", default='')
 
     def __str__(self):
         return self.name.name
 
 
 class Effect(models.Model):
-    name = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="effect_construct")
-    observed_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="observed_effect_value")
+    name = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="effec")
+    observed_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="effect")
 
     def __str__(self):
         return self.name.name

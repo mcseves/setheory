@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from .forms import NewTheoryForm
 from .models import *
 
 
@@ -23,29 +24,19 @@ def area_of_interest(request, name):
 
 def new_theory(request, name):
     current_area = get_object_or_404(AreaOfInterest, name=name)
-
+    # user = User.objects.first()
 
     if request.method == 'POST':
-        # causeconstruct = request.POST['causeconstruct']
-        # refvalue = request.POST['refvalue']
-        # obsvalue = request.POST['obsvalue']
+        form = NewTheoryForm(request.POST)
+        if form.is_valid():
+            construct = form.save(commit=False)
+            construct.area = current_area
+            construct.save()
+            return redirect('area_of_interest', name=name)
+        else:
+            print(form.errors)
+    else:
 
-        # user = User.objects.first()
+        form = NewTheoryForm()
 
-        # cause = Cause.objects.create(
-        #     name=causeconstruct,
-        #     reference_value=refvalue,
-        #     observed_value=obsvalue
-        # )
-
-        constructname = request.POST['construct']
-
-        construct = Construct.objects.create(
-            name=constructname,
-            area=current_area
-        )
-
-
-        return redirect('area_of_interest', name=name)
-
-    return render(request, 'swetheory/createtheories.html', {'current_area': current_area})
+    return render(request, 'swetheory/createtheories.html', {'current_area': current_area, 'form': form})

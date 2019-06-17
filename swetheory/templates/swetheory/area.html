@@ -10,11 +10,13 @@
 {% endblock %}
 
 {% block content %}
-      {% for cnstr in all_construct %}
-            {% if cnstr.area.name == current_area.name %}
-            {{ cnstr.name }}<br>
-            {% endif %}
-      {% endfor %}
+    <div class="mb-4">
+        <a href="{% url 'new_theory' current_area.name %}" class="btn btn-primary">New Theory</a>
+    </div>
+
+    {% for cnstr in current_area.construct.all %}
+        {{ cnstr.name }}<br>
+    {% endfor %}
 
 {% endblock %}
 
