@@ -41,23 +41,17 @@ class Cause(models.Model):
 
 
 class Effect(models.Model):
-    name = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="effec")
-    observed_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="effect")
+    name = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="effec", default='')
+    observed_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="effect", default='')
 
     def __str__(self):
         return self.name.name
 
 
-class Proposition(models.Model):
-    area = models.ForeignKey(AreaOfInterest, on_delete=models.CASCADE, related_name="proposition")
-    cause = models.ManyToManyField(Cause)
-    effect = models.ManyToManyField(Effect)
-
-
 class EvidenceEffect(models.Model):
     name = models.TextField()
     scope = models.TextField()
-    proposition = models.ForeignKey(Proposition, on_delete=models.CASCADE)
+    # proposition = models.ForeignKey(Proposition, on_delete=models.CASCADE)
 
     TYPES_EVIDENCE = (
         ('p', 'Philosophical'),
@@ -76,3 +70,10 @@ class EvidenceEffect(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Proposition(models.Model):
+    area = models.ForeignKey(AreaOfInterest, on_delete=models.CASCADE, related_name="proposition")
+    cause = models.ManyToManyField(Cause)
+    effect = models.ManyToManyField(Effect)
+    evidence = models.ForeignKey(EvidenceEffect, on_delete=models.CASCADE)

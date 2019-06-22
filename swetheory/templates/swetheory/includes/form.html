@@ -1,10 +1,71 @@
 {% load widget_tweaks %}
 
-{% for field in form %}
+<!--CAUSE-->
+<h1>Causa</h1>
+{% for field in causeform %}
   <div class="form-group">
     {{ field.label_tag }}
 
-    {% if form.is_bound %}
+    {% if causeform.is_bound %}
+      {% if field.errors %}
+        {% render_field field class="form-control is-invalid" %}
+        {% for error in field.errors %}
+          <div class="invalid-feedback">
+            {{ error }}
+          </div>
+        {% endfor %}
+      {% else %}
+        {% render_field field class="form-control is-valid" %}
+      {% endif %}
+    {% else %}
+      {% render_field field class="form-control" %}
+    {% endif %}
+
+    {% if field.help_text %}
+      <small class="form-text text-muted">
+        {{ field.help_text }}
+      </small>
+    {% endif %}
+  </div>
+{% endfor %}
+
+<!--EFFECT-->
+<h1>Efeito</h1>
+{% for field in effectform %}
+  <div class="form-group">
+    {{ field.label_tag }}
+
+    {% if effectform.is_bound %}
+      {% if field.errors %}
+        {% render_field field class="form-control is-invalid" %}
+        {% for error in field.errors %}
+          <div class="invalid-feedback">
+            {{ error }}
+          </div>
+        {% endfor %}
+      {% else %}
+        {% render_field field class="form-control is-valid" %}
+      {% endif %}
+    {% else %}
+      {% render_field field class="form-control" %}
+    {% endif %}
+
+    {% if field.help_text %}
+      <small class="form-text text-muted">
+        {{ field.help_text }}
+      </small>
+    {% endif %}
+  </div>
+{% endfor %}
+
+
+<!-- EVIDENCE -->
+<h1>Evidencia</h1>
+{% for field in evidenceform %}
+  <div class="form-group">
+    {{ field.label_tag }}
+
+    {% if evidenceform.is_bound %}
       {% if field.errors %}
         {% render_field field class="form-control is-invalid" %}
         {% for error in field.errors %}

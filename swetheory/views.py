@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .forms import NewTheoryForm
+from .forms import *
 from .models import *
 
 
@@ -26,17 +26,39 @@ def new_theory(request, name):
     current_area = get_object_or_404(AreaOfInterest, name=name)
     # user = User.objects.first()
 
+    # if request.method == 'POST':
+    #     form = NewTheoryForm(request.POST)
+    #     if form.is_valid():
+    #         causeconstruct = form.save(commit=False)
+    #         # construct.area = current_area
+    #         causeconstruct.save()
+    #         return redirect('area_of_interest', name=name)
+    #     else:
+    #         print(form.errors)
+    # else:
+    #
+    #     form = NewTheoryForm()
+
     if request.method == 'POST':
-        form = NewTheoryForm(request.POST)
-        if form.is_valid():
-            construct = form.save(commit=False)
-            construct.area = current_area
-            construct.save()
+        causeform = CauseForm(request.POST)
+        effectform = EffectForm(request.POST, instance=Effect())
+        evidenceform = EvidenceForm(request.POST, instance=Effect)
+
+        if causeform.is_valid():
+            newcause = causeform.save(commit=False)
+            newcause.save()
+            neweffect = effectform.save(commit=False)
+            neweffect.save()
+            newevidence = evidenceform.save(commit=False)
+            newevidence.save()
             return redirect('area_of_interest', name=name)
         else:
-            print(form.errors)
+            print(causeform.errors)
+            print(effectform.errors)
+            print(evidenceform.errors)
     else:
+        causeform = CauseForm()
+        effectform = EffectForm()
+        evidenceform = EvidenceForm()
 
-        form = NewTheoryForm()
-
-    return render(request, 'swetheory/createtheories.html', {'current_area': current_area, 'form': form})
+    return render(request, 'swetheory/createtheories.html', {'current_area': current_area, 'causeform': causeform, 'effectform': effectform, 'evidenceform': evidenceform})

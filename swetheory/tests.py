@@ -1,9 +1,9 @@
 from django.urls import reverse
 from django.urls import resolve
 from django.test import TestCase
-from .views import home, area_of_interest, new_theory
-from .models import AreaOfInterest, Construct
-from .forms import NewTheoryForm
+from .views import *
+from .models import *
+from .forms import *
 
 
 class HomeTests(TestCase):
