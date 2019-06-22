@@ -3,6 +3,8 @@ from django.urls import resolve
 from django.test import TestCase
 from .views import home, area_of_interest, new_theory
 from .models import AreaOfInterest, Construct
+from .forms import NewTheoryForm
+
 
 class HomeTests(TestCase):
     def setUp(self):
@@ -57,7 +59,7 @@ class AreaOfInterestTests(TestCase):
         self.assertContains(response, 'href="{0}"'.format(new_theory_url))
 
 
-class NewTheoryTests(TestCase):
+class NewAreaOfInterestTests(TestCase):
     def setUp(self):
         AreaOfInterest.objects.create(name='Area')
         # User.objects.create_user(username='john', email='john@doe.com', password='123')
@@ -76,7 +78,7 @@ class NewTheoryTests(TestCase):
         view = resolve('/area/Area/new/')
         self.assertEquals(view.func, new_theory)
 
-    def test_new_theory_view_contains_link_back_to_area_view(self):
+    def test_view_contains_link_back_to_view(self):
         new_topic_url = reverse('new_theory', kwargs={'name': "Area"})
         area_url = reverse('area_of_interest', kwargs={'name': "Area"})
         response = self.client.get(new_topic_url)
@@ -87,32 +89,32 @@ class NewTheoryTests(TestCase):
         response = self.client.get(url)
         self.assertContains(response, 'csrfmiddlewaretoken')
 
-    def test_new_theory_valid_construc_data(self):
+    def test_new_theory_valid_data(self):
         url = reverse('new_theory', kwargs={'name': "Area"})
         data = {
-            'construct': 'Test'
+            'name': 'Test'
         }
         response = self.client.post(url, data)
         self.assertTrue(Construct.objects.exists())
 
-    def test_new_theory_invalid_construct_data(self):
-        '''
-        Invalid post data should not redirect
-        The expected behavior is to show the form again with validation errors
-        '''
+    def test_new_theory_invalid_data(self):
         url = reverse('new_theory', kwargs={'name': "Area"})
         response = self.client.post(url, {})
+        form = response.context.get('form')
         self.assertEquals(response.status_code, 200)
+        self.assertTrue(form.errors)
 
-    def test_new_theory_invalid_construct_data_empty_fields(self):
-        '''
-        Invalid post data should not redirect
-        The expected behavior is to show the form again with validation errors
-        '''
+    def test_new_theory_invalid_data_empty_fields(self):
         url = reverse('new_theory', kwargs={'name': "Area"})
         data = {
-            'construct': 'Test'
+            'name': ''
         }
         response = self.client.post(url, data)
         self.assertEquals(response.status_code, 200)
         self.assertFalse(Construct.objects.exists())
+
+    def test_contains_form(self):
+        url = reverse('new_theory', kwargs={'name': "Area"})
+        response = self.client.get(url)
+        form = response.context.get('form')
+        self.assertIsInstance(form, NewTheoryForm)
