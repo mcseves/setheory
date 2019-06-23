@@ -32,17 +32,17 @@ class Construct(models.Model):
 
 
 class Cause(models.Model):
-    name = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="cause", default='')
-    reference_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="cause_ref", default='')
-    observed_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="cause_obs", default='')
+    name = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="cause")
+    reference_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="cause_ref")
+    observed_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="cause_obs")
 
     def __str__(self):
         return self.name.name
 
 
 class Effect(models.Model):
-    name = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="effec", default='')
-    observed_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="effect", default='')
+    name = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="effect")
+    observed_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="effect_obs")
 
     def __str__(self):
         return self.name.name

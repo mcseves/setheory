@@ -2,23 +2,16 @@ from django import forms
 from .models import *
 
 
-# class NewTheoryForm(forms.ModelForm):
-#
-#     class Meta:
-#         model = Cause
-#         fields = ['name', 'reference_value', 'observed_value']
-
 class CauseForm(forms.ModelForm):
-
     class Meta:
         model = Cause
-        fields = ['name', 'reference_value', 'observed_value']
+        fields = '__all__'
 
 
 class EffectForm(forms.ModelForm):
     class Meta:
         model = Effect
-        fields = ['name', 'observed_value']
+        fields = '__all__'
 
 
 class EvidenceForm(forms.ModelForm):

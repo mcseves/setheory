@@ -24,25 +24,11 @@ def area_of_interest(request, name):
 
 def new_theory(request, name):
     current_area = get_object_or_404(AreaOfInterest, name=name)
-    # user = User.objects.first()
-
-    # if request.method == 'POST':
-    #     form = NewTheoryForm(request.POST)
-    #     if form.is_valid():
-    #         causeconstruct = form.save(commit=False)
-    #         # construct.area = current_area
-    #         causeconstruct.save()
-    #         return redirect('area_of_interest', name=name)
-    #     else:
-    #         print(form.errors)
-    # else:
-    #
-    #     form = NewTheoryForm()
 
     if request.method == 'POST':
-        causeform = CauseForm(request.POST)
-        effectform = EffectForm(request.POST, instance=Effect())
-        evidenceform = EvidenceForm(request.POST, instance=Effect)
+        causeform = CauseForm(request.POST, prefix='createcause')
+        effectform = EffectForm(request.POST, prefix='createeffect')
+        evidenceform = EvidenceForm(request.POST, prefix='createevidence')
 
         if causeform.is_valid():
             newcause = causeform.save(commit=False)
@@ -51,6 +37,12 @@ def new_theory(request, name):
             neweffect.save()
             newevidence = evidenceform.save(commit=False)
             newevidence.save()
+
+            newproposition = Proposition(area=current_area, evidence=newevidence)
+            newproposition.save()
+            newproposition.cause.add(newcause)
+            newproposition.effect.add(neweffect)
+
             return redirect('area_of_interest', name=name)
         else:
             print(causeform.errors)
