@@ -32,31 +32,31 @@ class Construct(models.Model):
 
 
 class Cause(models.Model):
-    name = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="cause")
-    reference_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="cause_ref")
-    observed_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="cause_obs")
+    cause = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="cause")
+    reference_value_c = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="cause_ref")
+    observed_value_c = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="cause_obs")
 
     def __str__(self):
-        return self.name.name
+        return self.cause.name
 
 
 class Effect(models.Model):
-    name = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="effect")
+    effect = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="effect")
     observed_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="effect_obs")
 
     def __str__(self):
-        return self.name.name
+        return self.effect.name
 
 
 class EvidenceEffect(models.Model):
-    name = models.TextField()
-    scope = models.TextField()
-    # proposition = models.ForeignKey(Proposition, on_delete=models.CASCADE)
-
     TYPES_EVIDENCE = (
         ('p', 'Philosophical'),
         ('e', 'Empyrical')
     )
+
+    name = models.TextField()
+    scope = models.TextField()
+    doi_number = models.IntegerField()
 
     evidence_type = models.CharField(
         max_length=1,
@@ -65,8 +65,6 @@ class EvidenceEffect(models.Model):
         default='p',
         help_text=''
     )
-
-    doi_number = models.IntegerField()
 
     def __str__(self):
         return self.name

@@ -21,6 +21,7 @@ def area_of_interest(request, name):
 
     return render(request, 'swetheory/area.html', {'current_area': current_area, 'all_construct': all_construct})
 
+
 def new_theory(request, name):
     current_area = get_object_or_404(AreaOfInterest, name=name)
 
