@@ -1,22 +1,22 @@
 {% extends 'swetheory/base.html' %}
 
 {% block title %}
-  {{ current_area.name }} - {{ block.super }}
+{{ current_area.name }} - {{ block.super }}
 {% endblock %}
 
 {% block breadcrumb %}
-    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-    <li class="breadcrumb-item active">{{ current_area.name }}</li>
+<li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+<li class="breadcrumb-item active">{{ current_area.name }}</li>
 {% endblock %}
 
 {% block content %}
-    <div class="mb-4">
-        <a href="{% url 'new_theory' current_area.name %}" class="btn btn-primary">New Theory</a>
-    </div>
+<div class="mb-4">
+    <a href="{% url 'new_theory' current_area.name %}" class="btn btn-primary">New Theory</a>
+</div>
 
-    {% for cnstr in current_area.construct.all %}
-        {{ cnstr.name }}<br>
-    {% endfor %}
+{% for cnstr in current_area.construct.all %}
+{{ cnstr.name }}<br>
+{% endfor %}
 
 {% endblock %}
 

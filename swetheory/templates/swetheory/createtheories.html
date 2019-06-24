@@ -1,22 +1,22 @@
 {% extends 'swetheory/base.html' %}
 
 {% block title %}
-  Register a new theory
+Register a new theory
 {% endblock %}
 
 {% block breadcrumb %}
-    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-    <li class="breadcrumb-item"><a href="{% url 'area_of_interest' current_area.name %}">{{ current_area.name }}</a></li>
-    <li class="breadcrumb-item active">New theory</li>
+<li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+<li class="breadcrumb-item"><a href="{% url 'area_of_interest' current_area.name %}">{{ current_area.name }}</a></li>
+<li class="breadcrumb-item active">New theory</li>
 {% endblock %}
 
 {% block content %}
-  <form method="post" novalidate>
-      {% csrf_token %}
-      {% include 'swetheory/includes/form.html' %}
+<form method="post" >
+    {% csrf_token %}
+    {% include 'swetheory/includes/form.html' %}
 
-      <button type="submit" class="btn btn-success">Post</button>
-  </form>
+    <button type="submit" class="btn btn-success">Post</button>
+</form>
 <br>
 {% endblock %}
 

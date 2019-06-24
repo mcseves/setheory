@@ -88,33 +88,33 @@ class NewAreaOfInterestTests(TestCase):
         url = reverse('new_theory', kwargs={'name': "Area"})
         response = self.client.get(url)
         self.assertContains(response, 'csrfmiddlewaretoken')
-
-    def test_new_theory_valid_data(self):
-        url = reverse('new_theory', kwargs={'name': "Area"})
-        data = {
-            'name': 'Test'
-        }
-        response = self.client.post(url, data)
-        self.assertTrue(Construct.objects.exists())
-
-    def test_new_theory_invalid_data(self):
-        url = reverse('new_theory', kwargs={'name': "Area"})
-        response = self.client.post(url, {})
-        form = response.context.get('form')
-        self.assertEquals(response.status_code, 200)
-        self.assertTrue(form.errors)
-
-    def test_new_theory_invalid_data_empty_fields(self):
-        url = reverse('new_theory', kwargs={'name': "Area"})
-        data = {
-            'name': ''
-        }
-        response = self.client.post(url, data)
-        self.assertEquals(response.status_code, 200)
-        self.assertFalse(Construct.objects.exists())
-
-    def test_contains_form(self):
-        url = reverse('new_theory', kwargs={'name': "Area"})
-        response = self.client.get(url)
-        form = response.context.get('form')
-        self.assertIsInstance(form, NewTheoryForm)
+    #
+    # def test_new_theory_valid_data(self):
+    #     url = reverse('new_theory', kwargs={'name': "Area"})
+    #     data = {
+    #         'name': 'Test'
+    #     }
+    #     response = self.client.post(url, data)
+    #     self.assertTrue(Construct.objects.exists())
+    #
+    # def test_new_theory_invalid_data(self):
+    #     url = reverse('new_theory', kwargs={'name': "Area"})
+    #     response = self.client.post(url, {})
+    #     form = response.context.get('form')
+    #     self.assertEquals(response.status_code, 200)
+    #     self.assertTrue(form.errors)
+    #
+    # def test_new_theory_invalid_data_empty_fields(self):
+    #     url = reverse('new_theory', kwargs={'name': "Area"})
+    #     data = {
+    #         'name': ''
+    #     }
+    #     response = self.client.post(url, data)
+    #     self.assertEquals(response.status_code, 200)
+    #     self.assertFalse(Construct.objects.exists())
+    #
+    # def test_contains_form(self):
+    #     url = reverse('new_theory', kwargs={'name': "Area"})
+    #     response = self.client.get(url)
+    #     form = response.context.get('form')
+    #     self.assertIsInstance(form, NewTheoryForm)

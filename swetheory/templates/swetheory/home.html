@@ -1,18 +1,36 @@
 {% extends 'swetheory/base.html' %}
 
 {% block breadcrumb %}
-  <li class="breadcrumb-item active">Home</li>
+<li class="breadcrumb-item active">Home</li>
 {% endblock %}
 
 {% block content %}
-   <body>
+<body>
+<div class="description">
+    <h1>Uncovering theories in Software Engineering</h1>
+    <p>This page will help you find all software engineering theories related to a certain area of interest.</p>
+    <p>Search here</p>
+
     <div class="container">
-      {% for area in areas %}
-        <a href="{% url 'area_of_interest' area.name %}">{{ area.name }}</a>
-        <br>
-      {% endfor %}
+        <div class="dropdown show">
+
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Domain of interest
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                {% for area in areas %}
+                <a class="dropdown-item" href="{% url 'area_of_interest' area.name %}">{{area.name}}</a>
+                {% endfor %}
+            </div>
+        </div>
+
     </div>
-  </body>
+
+</div>
+
+
+
+</body>
 {% endblock %}
 
 
