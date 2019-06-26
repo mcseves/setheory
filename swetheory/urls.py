@@ -9,5 +9,6 @@ urlpatterns = [
     path('home.html', views.home, name='home'),
     url(r'^$', views.home, name='home'),
     path('area/<str:name>', views.area_of_interest, name='area_of_interest'),
-    path('area/<str:name>/new/', views.new_theory, name='new_theory')
+    path('area/<str:name>/new/', views.new_theory, name='new_theory'),
+    path('search_theory/', views.search_theory, name='search_theory')
 ]

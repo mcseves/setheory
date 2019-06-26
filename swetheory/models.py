@@ -39,6 +39,9 @@ class Cause(models.Model):
     def __str__(self):
         return self.cause.name
 
+    def get_area(self):
+        return self.cause.area.name
+
 
 class Effect(models.Model):
     effect = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="effect")
@@ -46,6 +49,9 @@ class Effect(models.Model):
 
     def __str__(self):
         return self.effect.name
+
+    def get_area(self):
+        return self.effect.area.name
 
 
 class EvidenceEffect(models.Model):
@@ -75,3 +81,29 @@ class Proposition(models.Model):
     cause = models.ManyToManyField(Cause)
     effect = models.ManyToManyField(Effect)
     evidence = models.ForeignKey(EvidenceEffect, on_delete=models.CASCADE)
+
+    def get_cause_values(self):
+        ret = ' '
+        for cse in self.cause.all():
+            if cse.reference_value_c:
+                ret = ret + cse.reference_value_c.name + " "
+            if cse.observed_value_c:
+                ret = ret + cse.observed_value_c.name + " "
+            ret = ret + cse.cause.name + ','
+
+        return ret[:-1]
+
+    def get_effect_values(self):
+        ret = ' '
+        for eft in self.effect.all():
+            if eft.observed_value:
+                ret = ret + eft.observed_value.name + " "
+            ret = ret + eft.effect.name + ','
+        return ret[:-1]
+
+    def get_phrase(self):
+        causes = self.get_cause_values()
+        effects = self.get_effect_values()
+
+        return "Using" + causes + "results in" + effects
+

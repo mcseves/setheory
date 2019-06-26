@@ -15,11 +15,14 @@ def home(request):
 
 
 def area_of_interest(request, name):
-    # return render(request, 'swetheory/areas.html', {})
     current_area = get_object_or_404(AreaOfInterest, name=name)
-    all_construct = Construct.objects.all()
+    all_cause = Cause.objects.all()
+    all_effect = Effect.objects.all()
+    all_proposition = Proposition.objects.all()
 
-    return render(request, 'swetheory/area.html', {'current_area': current_area, 'all_construct': all_construct})
+    args = {'current_area': current_area, 'all_cause': all_cause, 'all_effect': all_effect, 'all_proposition': all_proposition}
+
+    return render(request, 'swetheory/area.html', args)
 
 
 def new_theory(request, name):
@@ -36,6 +39,7 @@ def new_theory(request, name):
             neweffect = effectform.save(commit=False)
             neweffect.save()
             newevidence = evidenceform.save(commit=False)
+            newevidence.area = current_area
             newevidence.save()
 
             newproposition = Proposition(area=current_area, evidence=newevidence)
@@ -56,3 +60,20 @@ def new_theory(request, name):
     return render(request, 'swetheory/createtheories.html', {'current_area': current_area, 'causeform': causeform,
                                                              'effectform': effectform, 'evidenceform': evidenceform})
 
+
+def search_theory(request):
+    if request.method == 'POST':
+        search_cause = request.POST.get('search_cause', False)
+        search_effect = request.POST.get('search_effect', False)
+        search_proposition = request.POST.get('search_proposition', False)
+
+    else:
+        search_cause = False
+        search_effect = False
+        search_proposition = False
+
+    causes = Cause.objects.filter(cause__name__contains=search_cause)
+    effects = Effect.objects.filter(effect__name__contains=search_effect)
+    props = Proposition.objects.all()
+
+    return render(request, 'swetheory/search.html', {'causes': causes, 'effects': effects, 'props': props})

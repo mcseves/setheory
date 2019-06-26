@@ -1,0 +1,25 @@
+{% if causes and effects %}
+{% for prop in props %}
+{% for cse in causes %}
+here
+{{prop.cause.cause}}
+{% if prop.cause.cause == cse.cause %}
+where are you
+{% for eff in effects %}
+now
+{% if prop.effect.effect == eff.effect %}
+<h6> Proposition:</h6>
+<li>{{ prop.get_phrase }}</li>
+<li>{{ prop.evidence.name }}</li>
+<li>{{ prop.evidence.scope }}</li>
+<li>{{ prop.evidence.doi_number }}</li>
+<li>{{ prop.evidence.evidence_type }}</li>
+{% endif  %}
+{% endfor %}
+{% endif  %}
+now??
+{% endfor %}
+{% endfor %}
+{% else %}
+No theories for this construct
+{% endif  %}

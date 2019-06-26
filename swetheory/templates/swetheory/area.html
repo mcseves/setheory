@@ -1,23 +1,35 @@
 {% extends 'swetheory/base.html' %}
 
+
 {% block title %}
 {{ current_area.name }} - {{ block.super }}
 {% endblock %}
+
 
 {% block breadcrumb %}
 <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
 <li class="breadcrumb-item active">{{ current_area.name }}</li>
 {% endblock %}
 
+
 {% block content %}
-<div class="mb-4">
-    <a href="{% url 'new_theory' current_area.name %}" class="btn btn-primary">New Theory</a>
+<a href="{% url 'new_theory' current_area.name %}" class="btn btn-primary">New Theory</a>
+Look for propositions by choosing either a cause contruct, an effect construct, or a scope.
+
+<form method="post" id="search-form">
+
+    {% csrf_token %}
+    {% include 'swetheory/includes/searchform.html' %}
+
+
+    <button type="submit" value="Post" class="btn btn-success">Search</button>
+</form>
+
+<div id="search_result">
+
 </div>
-
-{% for cnstr in current_area.construct.all %}
-{{ cnstr.name }}<br>
-{% endfor %}
-
 {% endblock %}
 
-{% load static %}
+
+{% block javascript %}
+{% endblock %}

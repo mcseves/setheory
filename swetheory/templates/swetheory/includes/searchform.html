@@ -1,0 +1,39 @@
+{% load widget_tweaks %}
+<div class="input-group mb-3">
+
+<div class="input-group-prepend">
+            <label class="input-group-text" for="selectProposition">Proposição</label>
+        </div>
+        <select class="custom-select" id="selectProposition">
+            {% for prp in all_proposition %}
+            <option>The use of {{ prp.get_cause_values }} results in {{ prp.get_effect_values }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="selectCause">Construto causa</label>
+        </div>
+        <select class="custom-select" id="selectCause">
+            {% for cse in all_cause %}
+            {% if cse.get_area == current_area.name %}
+            <option >{{ cse.cause }}</option>
+            {% endif %}
+            {% endfor %}
+        </select>
+    </div>
+
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="selectEffect">Construto efeito</label>
+        </div>
+        <select class="custom-select" id="selectEffect">
+            {% for eff in all_effect %}
+            {% if eff.get_area == current_area.name %}
+            <option>{{ eff.effect }}</option>
+            {% endif %}
+            {% endfor %}
+        </select>
+    </div>
