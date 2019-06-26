@@ -12,6 +12,7 @@ Register a new theory
 {% endblock %}
 
 {% block content %}
+
 <form method="post" >
     {% csrf_token %}
     {% include 'swetheory/includes/form.html' %}
@@ -19,6 +20,15 @@ Register a new theory
     <button type="submit" class="btn btn-success">Save</button>
 </form>
 <br>
-{% endblock %}
 
-{% load static %}
+<div class="modal fade" id="modal-construct">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div>
+    </div>
+
+    {% endblock %}
+    {% load static %}
+
+    {% block javascript %}
+    {% endblock %}

@@ -1,9 +1,28 @@
 {% for props in result_props%}
-<h3>Proposição</h3>
 {% for prop in props%}
-<li>{{prop.evidence.name}}</li>
-<li>{{prop.evidence.scope}}</li>
-<li>{{prop.evidence.evidence_type}}</li>
-<li>{{prop.evidence.doi_number}}</li>
+<h3>Proposição</h3>
+  <p>
+    {{ prop.get_phrase}}
+  </p>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">no</th>
+    <th scope="col">Effect</th>
+    <th scope="col">Scope</th>
+    <th scope="col">Evidence Type</th>
+    <th scope="col">DOI Number</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">1</th>
+    <td>{{prop.evidence.name}}</td>
+    <td>{{prop.evidence.scope}}</td>
+    <td>{{prop.evidence.evidence_type}}</td>
+    <td>{{prop.evidence.doi_number}}</td>
+  </tr>
+  </tbody>
+</table>
 {% endfor %}
 {% endfor %}

@@ -1,13 +1,13 @@
 body {
   padding: 0;
   margin: 0;
-  background: #EEEEE9;
+  background: #989FCE;
 }
 
 /*--- navigation bar ---*/
 
 .navbar {
-  background:#BF114B;
+  background:#020122;
 }
 
 .nav-link,
@@ -38,7 +38,7 @@ body {
   text-align: center;
 }
 .description h1 {
-  color: #BF114B;
+  color: #020122;
 }
 .description p {
   color: #000;

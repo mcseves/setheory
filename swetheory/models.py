@@ -33,8 +33,10 @@ class Construct(models.Model):
 
 class Cause(models.Model):
     cause = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="cause")
-    reference_value_c = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="cause_ref")
-    observed_value_c = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="cause_obs")
+    reference_value_c = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="cause_ref",
+                                          help_text="Reference value is optional", blank=True, null=True)
+    observed_value_c = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="cause_obs",
+                                         help_text="Observed value is optional", blank=True, null=True)
 
     def __str__(self):
         return self.cause.name
@@ -45,7 +47,8 @@ class Cause(models.Model):
 
 class Effect(models.Model):
     effect = models.ForeignKey(Construct, on_delete=models.CASCADE, related_name="effect")
-    observed_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="effect_obs")
+    observed_value = models.ForeignKey(Value, on_delete=models.CASCADE, related_name="effect_obs",
+                                       help_text="Observed value is optional", blank=True, null=True)
 
     def __str__(self):
         return self.effect.name
@@ -104,5 +107,5 @@ class Proposition(models.Model):
         causes = self.get_cause_values()
         effects = self.get_effect_values()
 
-        return "Using" + causes + "results in" + effects
+        return "Using" + causes + "results in " + effects
 

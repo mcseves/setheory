@@ -11,6 +11,15 @@ class ConstructForm(forms.ModelForm):
         }
 
 
+class ValueForm(forms.ModelForm):
+    class Meta:
+        model = Value
+        fields = ['name']
+        labels = {
+            'name': 'Name'
+        }
+
+
 class CauseForm(forms.ModelForm):
     def __init__(self, area, *args, **kwargs):
         super(CauseForm, self).__init__(*args, **kwargs)

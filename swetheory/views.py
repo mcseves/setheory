@@ -1,4 +1,7 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
+from django.template.loader import render_to_string
+
 from .forms import *
 from .models import *
 
@@ -90,4 +93,3 @@ def search_theory(request):
     # print(result_props)
 
     return render(request, 'swetheory/search.html', {'result_props': result_props})
-
