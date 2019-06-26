@@ -4,12 +4,8 @@ from .models import *
 
 
 def home(request):
-    if request.method == 'GET':  # If the form is submitted
-        search_query = request.GET.get('search_box', None)
-        # Do whatever you need with the word the user looked for
-
-        areas = AreaOfInterest.objects.all()
-        args = {'areas': areas}
+    areas = AreaOfInterest.objects.all()
+    args = {'areas': areas}
 
     return render(request, 'swetheory/home.html', args)
 
@@ -19,7 +15,6 @@ def area_of_interest(request, name):
     all_cause = Cause.objects.all()
     all_effect = Effect.objects.all()
     all_proposition = Proposition.objects.all()
-
     args = {'current_area': current_area, 'all_cause': all_cause, 'all_effect': all_effect, 'all_proposition': all_proposition}
 
     return render(request, 'swetheory/area.html', args)
@@ -39,7 +34,6 @@ def new_theory(request, name):
             neweffect = effectform.save(commit=False)
             neweffect.save()
             newevidence = evidenceform.save(commit=False)
-            newevidence.area = current_area
             newevidence.save()
 
             newproposition = Proposition(area=current_area, evidence=newevidence)
@@ -72,8 +66,28 @@ def search_theory(request):
         search_effect = False
         search_proposition = False
 
-    causes = Cause.objects.filter(cause__name__contains=search_cause)
-    effects = Effect.objects.filter(effect__name__contains=search_effect)
-    props = Proposition.objects.all()
+    causes = Cause.objects.filter(cause__name=search_cause)
+    effects = Effect.objects.filter(effect__name=search_effect)
+    # props = Proposition.objects.all()
+    print(causes)
+    print(effects)
 
-    return render(request, 'swetheory/search.html', {'causes': causes, 'effects': effects, 'props': props})
+    result_props = set()
+    if causes:
+        if effects:
+            for cse in causes:
+                    for eff in effects:
+                        queryset = Proposition.objects.filter(
+                            cause__cause__name__contains=cse,
+                            effect__effect__name__contains=eff,
+                        )
+                        print("query: ")
+                        print(queryset)
+                        print(result_props)
+                        if queryset not in result_props:
+                            result_props.add(queryset)
+
+    # print(result_props)
+
+    return render(request, 'swetheory/search.html', {'result_props': result_props})
+

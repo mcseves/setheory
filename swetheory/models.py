@@ -59,7 +59,6 @@ class EvidenceEffect(models.Model):
         ('p', 'Philosophical'),
         ('e', 'Empyrical')
     )
-
     name = models.TextField()
     scope = models.TextField()
     doi_number = models.IntegerField()
