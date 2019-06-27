@@ -13,6 +13,11 @@ def home(request):
     return render(request, 'swetheory/home.html', args)
 
 
+def about(request):
+
+    return render(request, 'swetheory/about.html')
+
+
 def area_of_interest(request, name):
     current_area = get_object_or_404(AreaOfInterest, name=name)
     all_cause = Cause.objects.all()
