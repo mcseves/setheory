@@ -16,18 +16,13 @@ Register a new theory
     {% csrf_token %}
     {% include 'swetheory/includes/form.html' %}
 
-    <button type="submit" class="btn btn-success">Save</button>
+    <button type="submit" class="btn btn-success float-right">Save</button>
 </form>
-<p class="float-right">
-    <button type="button" class="btn btn-primary ">
-        <span class="glyphicon glyphicon-plus"></span>
-        <a href="{% url 'add_construct' current_area.name %}">New construct</a>
-    </button>
+<p class="float-lg-left">
 
-    <button type="button" class="btn btn-primary ">
-        <span class="glyphicon glyphicon-plus"></span>
-        <a href="{% url 'add_value' current_area.name %}">New value</a>
-    </button>
+        <a href="{% url 'add_construct' current_area.name %}" class="btn btn-primary">New construct</a>
+
+        <a href="{% url 'add_value' current_area.name %}" class="btn btn-primary">New value</a>
 </p>
 <br>
 

@@ -13,8 +13,7 @@
 
 
 {% block content %}
-<a href="{% url 'new_theory' current_area.name %}" class="btn btn-primary">New Theory</a>
-Look for propositions by choosing either a cause contruct, an effect construct, or a scope.
+<p>Look for propositions by choosing either a cause contruct, an effect construct, or a proposition.</p>
 
 <form method="post" id="search-form">
 
@@ -22,12 +21,14 @@ Look for propositions by choosing either a cause contruct, an effect construct, 
     {% include 'swetheory/includes/searchform.html' %}
 
 
-    <button type="submit" value="Post" class="btn btn-success">Search</button>
+    <button type="submit" value="Post" class="btn btn-success float-right">Search</button>
 </form>
-
+<br>
 <div id="search_result">
 
 </div>
+<br>
+<a href="{% url 'new_theory' current_area.name %}" class="btn btn-primary float-right">New Theory</a>
 {% endblock %}
 
 

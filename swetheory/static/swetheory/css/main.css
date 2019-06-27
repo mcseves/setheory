@@ -1,18 +1,18 @@
 body {
   padding: 0;
   margin: 0;
-  background: #989FCE;
+  background: #F8F8F8;
 }
 
 /*--- navigation bar ---*/
 
 .navbar {
-  background:#020122;
+  background:#94C5CC;
 }
 
 .nav-link,
 .navbar-brand {
-    color: #fff;
+    color: #000100;
     cursor: pointer;
     font-family: 'Work Sans', sans-serif;
 }
@@ -22,7 +22,7 @@ body {
 }
 
 .nav-link:hover {
-  color: #B3DFDB;
+  color: #B4D2E7;
 }
 
 .navbar-collapse {
