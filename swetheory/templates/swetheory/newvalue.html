@@ -10,14 +10,14 @@ Register a new theory
 <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
 <li class="breadcrumb-item"><a href="{% url 'area_of_interest' current_area.name %}">{{ current_area.name }}</a></li>
 <li class="breadcrumb-item"><a href="{% url 'new_theory' current_area.name %}">New theory</a></li>
-<li class="breadcrumb-item active">Add construct</li>
+<li class="breadcrumb-item active">Add value</li>
 {% endblock %}
 
 {% block content %}
 <form method="post" >
     {% csrf_token %}
      <div class="card">
-        <h5 class="card-header">Construct</h5>
+        <h5 class="card-header">Value</h5>
         <div class="card-body">
             {% for field in form %}
             <div class="form-group row">

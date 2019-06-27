@@ -1,6 +1,5 @@
 {% extends 'swetheory/base.html' %}
 
-
 {% block title %}
 Register a new theory
 {% endblock %}
@@ -19,16 +18,22 @@ Register a new theory
 
     <button type="submit" class="btn btn-success">Save</button>
 </form>
+<p class="float-right">
+    <button type="button" class="btn btn-primary ">
+        <span class="glyphicon glyphicon-plus"></span>
+        <a href="{% url 'add_construct' current_area.name %}">New construct</a>
+    </button>
+
+    <button type="button" class="btn btn-primary ">
+        <span class="glyphicon glyphicon-plus"></span>
+        <a href="{% url 'add_value' current_area.name %}">New value</a>
+    </button>
+</p>
 <br>
 
-<div class="modal fade" id="modal-construct">
-    <div class="modal-dialog">
-        <div class="modal-content">
-        </div>
-    </div>
 
-    {% endblock %}
-    {% load static %}
+{% endblock %}
+{% load static %}s
 
-    {% block javascript %}
-    {% endblock %}
+{% block javascript %}
+{% endblock %}

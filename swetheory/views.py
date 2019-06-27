@@ -79,17 +79,51 @@ def search_theory(request):
     if causes:
         if effects:
             for cse in causes:
-                    for eff in effects:
-                        queryset = Proposition.objects.filter(
-                            cause__cause__name__contains=cse,
-                            effect__effect__name__contains=eff,
-                        )
-                        print("query: ")
-                        print(queryset)
-                        print(result_props)
-                        if queryset not in result_props:
-                            result_props.add(queryset)
+                for eff in effects:
+                    queryset = Proposition.objects.filter(
+                        cause__cause__name__contains=cse,
+                        effect__effect__name__contains=eff,
+                    )
+                    print("query: ")
+                    print(queryset)
+                    print(result_props)
+                    if queryset not in result_props:
+                        result_props.add(queryset)
 
     # print(result_props)
 
     return render(request, 'swetheory/search.html', {'result_props': result_props})
+
+
+def add_construct(request, name):
+    current_area = get_object_or_404(AreaOfInterest, name=name)
+    if request.method == 'POST':
+        form = ConstructForm(request.POST)
+        if form.is_valid():
+            construct = form.save(commit=False)
+            construct.area = current_area
+            construct.save()
+            return redirect('new_theory', name=name)
+        else:
+            print(form.errors)
+
+    else:
+        form = ConstructForm()
+
+    return render(request, 'swetheory/newconstruct.html', {'current_area': current_area, 'form': form})
+
+
+def add_value(request, name):
+    current_area = get_object_or_404(AreaOfInterest, name=name)
+    if request.method == 'POST':
+        form = ValueForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('new_theory', name=name)
+        else:
+            print(form.errors)
+
+    else:
+        form = ValueForm()
+
+    return render(request, 'swetheory/newvalue.html', {'current_area': current_area, 'form': form})
