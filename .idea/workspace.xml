@@ -2,22 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c7e5176-c59f-4249-865f-c8f8d5101d93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/deleteproposition.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swetheory/static/swetheory/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/static/swetheory/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swetheory/static/swetheory/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/static/swetheory/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swetheory/templates/swetheory/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swetheory/templates/swetheory/area.html" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/area.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swetheory/templates/swetheory/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swetheory/templates/swetheory/createtheories.html" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/createtheories.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swetheory/templates/swetheory/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swetheory/templates/swetheory/includes/searchform.html" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/includes/searchform.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swetheory/templates/swetheory/newconstruct.html" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/newconstruct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swetheory/templates/swetheory/newvalue.html" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/newvalue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swetheory/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swetheory/migrations/0002_remove_evidenceeffect_area.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swetheory/migrations/0003_auto_20190626_0053.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swetheory/migrations/0004_auto_20190626_0055.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swetheory/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swetheory/templates/swetheory/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swetheory/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swetheory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -36,6 +27,18 @@
     <splitter split-orientation="horizontal" split-proportion="0.45620438">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/swetheory/models.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="313">
+                  <caret line="93" column="60" selection-start-line="93" selection-start-column="60" selection-end-line="93" selection-end-column="60" />
+                  <folding>
+                    <element signature="e#34#62#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/swetheory/static/swetheory/css/main.css">
               <provider selected="true" editor-type-id="text-editor">
@@ -45,11 +48,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="about.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/about.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+                <state relative-caret-position="30">
+                  <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
                 </state>
               </provider>
             </entry>
@@ -58,7 +61,7 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="deleteproposition.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="deleteproposition.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/deleteproposition.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="330">
@@ -76,11 +79,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="search.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="search.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/search.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3">
-                  <caret line="32" column="12" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+                <state relative-caret-position="75">
+                  <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
                 </state>
               </provider>
             </entry>
@@ -142,7 +145,6 @@
         <option value="$PROJECT_DIR$/swetheory/forms.py" />
         <option value="$PROJECT_DIR$/swetheory/templates/swetheory/includes/form.html" />
         <option value="$PROJECT_DIR$/swetheory/templates/swetheory/partialnewconstruct.html" />
-        <option value="$PROJECT_DIR$/swetheory/models.py" />
         <option value="$PROJECT_DIR$/swetheory/urls.py" />
         <option value="$PROJECT_DIR$/swetheory/views.py" />
         <option value="$PROJECT_DIR$/swetheory/static/swetheory/js/main.js" />
@@ -153,10 +155,11 @@
         <option value="$PROJECT_DIR$/swetheory/templates/swetheory/createtheories.html" />
         <option value="$PROJECT_DIR$/swetheory/templates/swetheory/newvalue.html" />
         <option value="$PROJECT_DIR$/swetheory/templates/swetheory/newconstruct.html" />
-        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/search.html" />
         <option value="$PROJECT_DIR$/swetheory/templates/swetheory/deleteproposition.html" />
         <option value="$PROJECT_DIR$/swetheory/static/swetheory/css/main.css" />
         <option value="$PROJECT_DIR$/swetheory/templates/swetheory/about.html" />
+        <option value="$PROJECT_DIR$/swetheory/models.py" />
+        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/search.html" />
       </list>
     </option>
   </component>
@@ -565,16 +568,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swetheory/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="105" column="18" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="18" />
-          <folding>
-            <element signature="e#34#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/swetheory/forms.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -680,13 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3">
-          <caret line="32" column="12" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/deleteproposition.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -703,8 +689,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="30">
+          <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swetheory/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="93" column="60" selection-start-line="93" selection-start-column="60" selection-end-line="93" selection-end-column="60" />
+          <folding>
+            <element signature="e#34#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="15" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
         </state>
       </provider>
     </entry>

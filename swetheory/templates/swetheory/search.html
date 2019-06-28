@@ -3,7 +3,7 @@
 {% if result_props == 1 %}
 <card-body>
   <h4>
-    Proposição
+    Proposition
     <a href="{% url 'delete_prop' name=current_area prop_id=result_props.id %}">
       <i class="btn fa fa-trash-o"></i>
     </a>
@@ -37,7 +37,7 @@
 {% else %}
 {% for prop in result_props%}
 <h4>
-  Proposição
+  Proposition
   <a href="{% url 'delete_prop' name=current_area prop_id=prop.id %}">
     <i class="fa fa-trash-o"></i>
   </a>

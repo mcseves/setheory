@@ -89,9 +89,9 @@ class Proposition(models.Model):
         for cse in self.cause.all():
             if cse.reference_value_c:
                 ret = ret + cse.reference_value_c.name + " "
+            ret = ret + cse.cause.name + ' '
             if cse.observed_value_c:
-                ret = ret + cse.observed_value_c.name + " "
-            ret = ret + cse.cause.name + ','
+                ret = ret + cse.observed_value_c.name + " in "
 
         return ret[:-1]
 
@@ -107,5 +107,5 @@ class Proposition(models.Model):
         causes = self.get_cause_values()
         effects = self.get_effect_values()
 
-        return "Using" + causes + "results in " + effects
+        return "Using" + causes + " results in " + effects
 
