@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c7e5176-c59f-4249-865f-c8f8d5101d93" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/about.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/deleteproposition.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swetheory/static/swetheory/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/static/swetheory/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swetheory/static/swetheory/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/static/swetheory/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swetheory/templates/swetheory/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swetheory/templates/swetheory/area.html" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/area.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swetheory/templates/swetheory/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swetheory/templates/swetheory/createtheories.html" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/createtheories.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swetheory/templates/swetheory/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swetheory/templates/swetheory/includes/searchform.html" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/includes/searchform.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swetheory/templates/swetheory/newconstruct.html" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/newconstruct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swetheory/templates/swetheory/newvalue.html" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/newvalue.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/swetheory/templates/swetheory/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/templates/swetheory/search.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swetheory/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/swetheory/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/swetheory/views.py" afterDir="false" />
     </list>
@@ -22,79 +33,61 @@
     <favorites_list name="tcc" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="area.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/area.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/swetheory/static/swetheory/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/swetheory/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-              <folding>
-                <element signature="e#0#36#0" expanded="true" />
-                <marker date="1561605329713" expanded="true" signature="1227:1467" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="about.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/about.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/swetheory/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-                <marker date="1561605288007" expanded="true" signature="134:747" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.45620438">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/swetheory/static/swetheory/css/main.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="363">
+                  <caret line="154" column="40" lean-forward="true" selection-start-line="154" selection-start-column="40" selection-end-line="154" selection-end-column="40" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="about.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/about.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="180">
+                  <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="deleteproposition.html" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/deleteproposition.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="330">
+                  <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="area.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/area.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                  <caret line="9" column="26" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="26" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="search.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/search.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="3">
+                  <caret line="32" column="12" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -112,8 +105,10 @@
       <find>Cause</find>
       <find>NewTheoryForm</find>
       <find>Evidencia</find>
-      <find>get_prep_value</find>
       <find>enter construct</find>
+      <find>get_prep_value</find>
+      <find>my-1</find>
+      <find>search_cause</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -144,22 +139,23 @@
         <option value="$PROJECT_DIR$/swetheory/admin.py" />
         <option value="$PROJECT_DIR$/swetheory/templates/swetheory/includes/search.html" />
         <option value="$PROJECT_DIR$/swetheory/static/swetheory/js/script.js" />
-        <option value="$PROJECT_DIR$/swetheory/static/swetheory/js/main.js" />
-        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/includes/searchform.html" />
         <option value="$PROJECT_DIR$/swetheory/forms.py" />
-        <option value="$PROJECT_DIR$/swetheory/models.py" />
-        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/search.html" />
         <option value="$PROJECT_DIR$/swetheory/templates/swetheory/includes/form.html" />
         <option value="$PROJECT_DIR$/swetheory/templates/swetheory/partialnewconstruct.html" />
-        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/newvalue.html" />
-        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/newconstruct.html" />
-        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/area.html" />
-        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/createtheories.html" />
-        <option value="$PROJECT_DIR$/swetheory/static/swetheory/css/main.css" />
-        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/home.html" />
-        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/base.html" />
+        <option value="$PROJECT_DIR$/swetheory/models.py" />
         <option value="$PROJECT_DIR$/swetheory/urls.py" />
         <option value="$PROJECT_DIR$/swetheory/views.py" />
+        <option value="$PROJECT_DIR$/swetheory/static/swetheory/js/main.js" />
+        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/base.html" />
+        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/home.html" />
+        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/includes/searchform.html" />
+        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/area.html" />
+        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/createtheories.html" />
+        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/newvalue.html" />
+        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/newconstruct.html" />
+        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/search.html" />
+        <option value="$PROJECT_DIR$/swetheory/templates/swetheory/deleteproposition.html" />
+        <option value="$PROJECT_DIR$/swetheory/static/swetheory/css/main.css" />
         <option value="$PROJECT_DIR$/swetheory/templates/swetheory/about.html" />
       </list>
     </option>
@@ -207,29 +203,6 @@
               <item name="tcc" type="462c0819:PsiDirectoryNode" />
               <item name="swetheory" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tcc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tcc" type="462c0819:PsiDirectoryNode" />
-              <item name="swetheory" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="swetheory" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tcc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tcc" type="462c0819:PsiDirectoryNode" />
-              <item name="swetheory" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="swetheory" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tcc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tcc" type="462c0819:PsiDirectoryNode" />
-              <item name="swetheory" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="swetheory" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tcc" type="b2602c69:ProjectViewProjectNode" />
@@ -352,12 +325,13 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32941177" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5024233" side_tool="true" weight="0.18970588" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32941177" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.12205882" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49757674" weight="0.18970588" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.0" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8727915" side_tool="true" visible="true" weight="0.23828755" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32941177" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8727915" side_tool="true" visible="true" weight="0.11470113" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Inspection Results" visible="true" weight="0.0" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49919224" weight="0.113235295" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -398,6 +372,32 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -407,10 +407,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/swetheory/static/css/maria-carolinas-first-project-9fddd0.webflow.css" />
-    <entry file="file://$PROJECT_DIR$/swetheory/static/css/normalize.css" />
-    <entry file="file://$PROJECT_DIR$/swetheory/static/css/webflow.css" />
-    <entry file="file://$PROJECT_DIR$/swetheory/static/swetheory/normalize.css" />
     <entry file="file://$PROJECT_DIR$/swetheory/static/swetheory/maria-carolinas-first-project-9fddd0.webflow.css" />
     <entry file="file://$PROJECT_DIR$/swetheory/static/swetheory/webflow.css" />
     <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.1/python_stubs/-424259128/builtins.py">
@@ -555,30 +551,6 @@
     <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/displaytheories.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/search.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/includes/form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" lean-forward="true" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swetheory/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="59">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/swetheory/migrations/0001_initial.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
@@ -586,98 +558,146 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/newvalue.html">
+    <entry file="file://$PROJECT_DIR$/swetheory/static/swetheory/js/bootstrap.bundle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/includes/searchform.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swetheory/static/swetheory/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" lean-forward="true" selection-start-column="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swetheory/static/swetheory/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="55" selection-start-line="20" selection-start-column="55" selection-end-line="20" selection-end-column="55" />
+        <state relative-caret-position="1417">
+          <caret line="189" column="59" lean-forward="true" selection-start-line="189" selection-start-column="59" selection-end-line="189" selection-end-column="59" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/swetheory/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="81" column="60" lean-forward="true" selection-start-line="81" selection-start-column="60" selection-end-line="81" selection-end-column="60" />
+        <state relative-caret-position="545">
+          <caret line="105" column="18" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="18" />
           <folding>
             <element signature="e#34#62#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/newconstruct.html">
+    <entry file="file://$PROJECT_DIR$/swetheory/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="46" lean-forward="true" selection-start-line="19" selection-start-column="46" selection-end-line="19" selection-end-column="46" />
+        <state relative-caret-position="330">
+          <caret line="22" column="33" lean-forward="true" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/createtheories.html">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/pycharm.jar!/resources/html5-schema/html5/tables.rnc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="80" selection-start-line="24" selection-start-column="80" selection-end-line="24" selection-end-column="80" />
+        <state relative-caret-position="190">
+          <caret line="206" column="22" selection-start-line="206" selection-start-column="22" selection-end-line="206" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/area.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="20" lean-forward="true" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/swetheory/static/swetheory/font-awesome-4.7.0/HELP-US-OUT.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/swetheory/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+        <state relative-caret-position="240">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
-            <marker date="1561605288007" expanded="true" signature="134:747" ph="..." />
+            <marker date="1561698248142" expanded="true" signature="134:843" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="335">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swetheory/static/swetheory/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/includes/form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-672">
+          <caret line="31" column="19" lean-forward="true" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/newvalue.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="42" lean-forward="true" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/newconstruct.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/swetheory/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="453">
+          <caret line="165" column="25" lean-forward="true" selection-start-line="165" selection-start-column="25" selection-end-line="165" selection-end-column="28" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
-            <marker date="1561605329713" expanded="true" signature="1227:1467" ph="..." />
+            <marker date="1561698989900" expanded="true" signature="1277:1517" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/includes/searchform.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="44" selection-start-line="3" selection-start-column="44" selection-end-line="3" selection-end-column="44" />
+        <state relative-caret-position="165">
+          <caret line="11" column="34" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/createtheories.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/area.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="26" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/search.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3">
+          <caret line="32" column="12" lean-forward="true" selection-start-line="32" selection-start-column="12" selection-end-line="32" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swetheory/templates/swetheory/deleteproposition.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/swetheory/static/swetheory/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="154" column="40" lean-forward="true" selection-start-line="154" selection-start-column="40" selection-end-line="154" selection-end-column="40" />
         </state>
       </provider>
     </entry>

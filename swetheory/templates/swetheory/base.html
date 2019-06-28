@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css?family=Peralta" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'swetheory/css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'swetheory/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'swetheory/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+
 
 </head>
 
@@ -25,10 +27,8 @@
 </nav>
 
 <div class="container">
-    <ol class="breadcrumb my-4">
-        {% block breadcrumb %}
-        {% endblock %}
-    </ol>
+
+
     {% block content %}
     {% endblock %}
 </div>

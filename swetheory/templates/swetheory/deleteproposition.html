@@ -1,0 +1,33 @@
+{% extends 'swetheory/base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}
+{{ current_area.name }} - {{ block.super }}
+{% endblock %}
+
+
+{% block content %}
+<ol class="breadcrumb my-3">
+    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+    <li class="breadcrumb-item active">{{ current_area.name }}</li>
+</ol>
+
+
+<p>Are you sure you want to delete the proposition {{excludeprop.get_phrase}}?</p>
+
+
+
+<form method="post">
+    {% csrf_token %}
+    <a class="btn btn-outline-secondary float-left" href="../">Cancel</a>
+    <button type="submit" class="btn btn-success del">Delete</button>
+</form>
+
+
+
+
+{% endblock %}
+
+
+{% block javascript %}
+{% endblock %}

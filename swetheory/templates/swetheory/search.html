@@ -1,11 +1,52 @@
-{% for props in result_props%}
-{% for prop in props%}
-<h3>Proposição</h3>
+<br>
+
+{% if result_props == 1 %}
+<card-body>
+  <h4>
+    Proposição
+    <a href="{% url 'delete_prop' name=current_area prop_id=result_props.id %}">
+      <i class="btn fa fa-trash-o"></i>
+    </a>
+  </h4>
+
   <p>
-    {{ prop.get_phrase}}
+    {{ result_props.get_phrase}}
   </p>
-<table class="table">
-  <thead>
+  <table class="table table-bordered table-sm">
+    <thead class="tlight">
+    <tr>
+      <th scope="col">no</th>
+      <th scope="col">Effect</th>
+      <th scope="col">Scope</th>
+      <th scope="col">Evidence Type</th>
+      <th scope="col">DOI Number</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{result_props.evidence.name}}</td>
+      <td>{{result_props.evidence.scope}}</td>
+      <td>{{result_props.evidence.evidence_type}}</td>
+      <td>{{result_props.evidence.doi_number}}</td>
+    </tr>
+    </tbody>
+  </table>
+</card-body>
+
+{% else %}
+{% for prop in result_props%}
+<h4>
+  Proposição
+  <a href="{% url 'delete_prop' name=current_area prop_id=prop.id %}">
+    <i class="fa fa-trash-o"></i>
+  </a>
+</h4>
+<p>
+  {{ prop.get_phrase}}
+</p>
+<table class="table table-bordered table-sm">
+  <thead class="tlight">
   <tr>
     <th scope="col">no</th>
     <th scope="col">Effect</th>
@@ -25,4 +66,4 @@
   </tbody>
 </table>
 {% endfor %}
-{% endfor %}
+{% endif %}

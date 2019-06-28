@@ -6,17 +6,18 @@
 Register a new theory
 {% endblock %}
 
-{% block breadcrumb %}
-<li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-<li class="breadcrumb-item"><a href="{% url 'area_of_interest' current_area.name %}">{{ current_area.name }}</a></li>
-<li class="breadcrumb-item"><a href="{% url 'new_theory' current_area.name %}">New theory</a></li>
-<li class="breadcrumb-item active">Add value</li>
-{% endblock %}
-
 {% block content %}
+<ol class="breadcrumb my-3">
+    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'area_of_interest' current_area.name %}">{{ current_area.name }}</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'new_theory' current_area.name %}">New theory</a></li>
+    <li class="breadcrumb-item active">Add value</li>
+</ol>
+
+
 <form method="post" >
     {% csrf_token %}
-     <div class="card">
+    <div class="card">
         <h5 class="card-header">Value</h5>
         <div class="card-body">
             {% for field in form %}
@@ -53,7 +54,10 @@ Register a new theory
     <br>
 
 
-    <button type="submit" class="btn btn-success">Save</button>
+    <p>
+        <a class="btn btn-outline-secondary float-left" href="../">Cancel</a>
+        <button type="submit" class="btn btn-success float-right">Save</button>
+    </p>
 </form>
 <br>
 

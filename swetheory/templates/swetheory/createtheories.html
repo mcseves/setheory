@@ -4,25 +4,27 @@
 Register a new theory
 {% endblock %}
 
-{% block breadcrumb %}
-<li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-<li class="breadcrumb-item"><a href="{% url 'area_of_interest' current_area.name %}">{{ current_area.name }}</a></li>
-<li class="breadcrumb-item active">New theory</li>
-{% endblock %}
-
 {% block content %}
+
+<ol class="breadcrumb my-3">
+    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+    <li class="breadcrumb-item"><a href="{% url 'area_of_interest' current_area.name %}">{{ current_area.name }}</a></li>
+    <li class="breadcrumb-item active">New proposition</li>
+</ol>
+
 
 <form method="post" >
     {% csrf_token %}
     {% include 'swetheory/includes/form.html' %}
 
+    <br>
     <button type="submit" class="btn btn-success float-right">Save</button>
-</form>
+
+
 <p class="float-lg-left">
+    <a href="{% url 'add_construct' current_area.name %}" class="btn btn-primary">New construct</a>
 
-        <a href="{% url 'add_construct' current_area.name %}" class="btn btn-primary">New construct</a>
-
-        <a href="{% url 'add_value' current_area.name %}" class="btn btn-primary">New value</a>
+    <a href="{% url 'add_value' current_area.name %}" class="btn btn-primary">New value</a>
 </p>
 <br>
 

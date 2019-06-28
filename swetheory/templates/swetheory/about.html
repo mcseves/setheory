@@ -1,15 +1,15 @@
 {% extends 'swetheory/base.html' %}
 
-{% block breadcrumb %}
-<li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
-<li class="breadcrumb-item active">About</li>
+<ol class="breadcrumb my-3">
+    <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+    <li class="breadcrumb-item active">About</li>
+</ol>
 
-{% endblock %}
 
 {% block content %}
 <body>
 <div class="description">
-<p>The goal of this website is to provide a place to gather theories in software engineering.</p>
+    <p>The goal of this website is to provide a place to gather theories in software engineering.</p>
 
 </div>
 

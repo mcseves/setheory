@@ -30,6 +30,7 @@ def area_of_interest(request, name):
 
 def new_theory(request, name):
     current_area = get_object_or_404(AreaOfInterest, name=name)
+    print("current area is " + current_area.name)
 
     if request.method == 'POST':
         causeform = CauseForm(current_area, request.POST)
@@ -68,6 +69,8 @@ def search_theory(request):
         search_cause = request.POST.get('search_cause', False)
         search_effect = request.POST.get('search_effect', False)
         search_proposition = request.POST.get('search_proposition', False)
+        current_area = request.POST.get('area', False)
+        print(current_area)
 
     else:
         search_cause = False
@@ -76,28 +79,44 @@ def search_theory(request):
 
     causes = Cause.objects.filter(cause__name=search_cause)
     effects = Effect.objects.filter(effect__name=search_effect)
-    # props = Proposition.objects.all()
-    print(causes)
-    print(effects)
-
+    props = Proposition.objects.all()
     result_props = set()
-    if causes:
-        if effects:
-            for cse in causes:
-                for eff in effects:
-                    queryset = Proposition.objects.filter(
-                        cause__cause__name__contains=cse,
-                        effect__effect__name__contains=eff,
-                    )
-                    print("query: ")
-                    print(queryset)
-                    print(result_props)
-                    if queryset not in result_props:
-                        result_props.add(queryset)
 
-    # print(result_props)
+    if search_proposition:
+        for prop in props:
+            if prop.get_phrase().replace(" ", "") == search_proposition.replace(" ", ""):
+                result_props.add(prop)
 
-    return render(request, 'swetheory/search.html', {'result_props': result_props})
+    elif causes.exists() and not effects.exists():
+        for cse in causes:
+            queryset = Proposition.objects.filter(cause__cause__name__contains=cse)
+            if queryset.count() == 1:
+                result_props.add(queryset.get())
+            else:
+                for qr in queryset:
+                    result_props.add(qr)
+
+    elif not causes.exists() and effects.exists():
+        for eff in effects:
+            queryset = Proposition.objects.filter(effect__effect__name__contains=eff)
+            if queryset.count() == 1:
+                result_props.add(queryset.get())
+            else:
+                for qr in queryset:
+                    result_props.add(qr)
+
+    else:
+        for cse in causes:
+            for eff in effects:
+                queryset = Proposition.objects.filter(cause__cause__name__contains=cse,
+                                                      effect__effect__name__contains=eff)
+                if queryset.count() == 1:
+                    result_props.add(queryset.get())
+                else:
+                    for qr in queryset:
+                        result_props.add(qr)
+
+    return render(request, 'swetheory/search.html', {'result_props': result_props, 'current_area':current_area})
 
 
 def add_construct(request, name):
@@ -111,7 +130,6 @@ def add_construct(request, name):
             return redirect('new_theory', name=name)
         else:
             print(form.errors)
-
     else:
         form = ConstructForm()
 
@@ -132,3 +150,22 @@ def add_value(request, name):
         form = ValueForm()
 
     return render(request, 'swetheory/newvalue.html', {'current_area': current_area, 'form': form})
+
+
+def delete_proposition(request, name, prop_id):
+    excludeprop = get_object_or_404(Proposition, id=prop_id)
+    print(excludeprop)
+    scope = Proposition.objects.get(id=excludeprop.id)
+    print(scope)
+
+    # POST request
+    if request.method == "POST":
+        # confirming delete
+        scope.delete()
+
+        return redirect('../')
+    context = {
+        "excludeprop": excludeprop
+    }
+
+    return render(request, "swetheory/deleteproposition.html", context)

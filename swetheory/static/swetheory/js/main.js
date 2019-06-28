@@ -4,21 +4,15 @@ $(function() {
     $('#search-form').on('submit', function(event){
         event.preventDefault();
         console.log("form submitted!")
-        console.log("valor de causa:" + $('#selectCause').val())
-        console.log("valor de efeito:" + $('#selectEffect').val())
-        console.log("valor de proposição:" + $('#selectProposition').val())
-        search_theory();
-    });
-
-    // AJAX for posting
-    function search_theory(){
+        console.log("area:" + $('#currentArea').val())
         $.ajax({
             url : "/search_theory/",
             type : "POST",
             data : {
                 search_cause: $('#selectCause').val(),
                 search_effect: $('#selectEffect').val(),
-                search_proposition: $('#selectProposition').val()
+                search_proposition: $('#selectProposition').val(),
+                area:$('#currentArea').val()
             },
             success : function(data) {
                 console.log("cheguei na função de sucesso!");
@@ -28,7 +22,7 @@ $(function() {
             },
             dataType : 'html'
         });
-    };
+    });
 
 
 
